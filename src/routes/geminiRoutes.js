@@ -14,7 +14,7 @@ router.post('/', generateLandingPage);
 router.get('/', getHistory);
 
 //@route Get Id ke base pe
-router.get('/:id', getHistoryById);
+// router.get('/:id', getHistoryById);
 // @route PUT /api/gemini/:id
 router.put('/:id', updateHistory);
 
