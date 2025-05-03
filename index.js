@@ -17,7 +17,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin:'http://localhost:3000'
+  origin:'https://chat-backend-mimc.onrender.com'
 }))
 app.use('/api/gemini', gemini);
 // Test Route
