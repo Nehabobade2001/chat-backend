@@ -17,8 +17,9 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin:'https://chat-backend-mimc.onrender.com',
-  credentials: true
+  origin:'https://chipper-pixie-8d1feb.netlify.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true 
 }))
 app.use('/api/gemini', gemini);
 // Test Route
