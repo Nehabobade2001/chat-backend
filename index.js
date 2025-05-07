@@ -1,8 +1,8 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const connectDB = require('./config/db');
-const gemini = require('./src/routes/geminiRoutes')
-const cors = require('cors')
+const express = require("express");
+const dotenv = require("dotenv");
+const connectDB = require("./config/db");
+const gemini = require("./src/routes/geminiRoutes");
+const cors = require("cors");
 
 // Load environment variables
 dotenv.config();
@@ -16,15 +16,20 @@ const app = express();
 // Middleware
 app.use(express.json());
 
-app.use(cors({
-  origin:'https://chipper-pixie-8d1feb.netlify.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true 
-}))
-app.use('/api/gemini', gemini);
+app.use(
+  cors({
+    origin: "https://chipper-pixie-8d1feb.netlify.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+  // cors({
+  //   origin: "http://localhost:3000",
+  // })
+);
+app.use("/api/gemini", gemini);
 // Test Route
-app.get('/', (req, res) => {
-  res.status(200).json({ message: 'MongoDB Connected App is running!' });
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "MongoDB Connected App is running!" });
 });
 
 // Start the server

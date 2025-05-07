@@ -42,27 +42,6 @@ exports.generateLandingPage = async (req, res) => {
 
 
 
-// GET: Fetch history by ID
-// exports.getHistoryById = async (req, res) => {
-//   const { id } = req.params;
-
-//   try {
-//     const history = await GeminiHistory.findById(id);
-
-//     if (!history) {
-//       return res.status(404).json({ success: false, error: 'History not found.' });
-//     }
-
-//     return res.status(200).json({ success: true, data: history });
-//   } catch (error) {
-//     console.error('Error fetching history by ID:', error.message);
-//     return res.status(500).json({ success: false, error: 'Failed to fetch history.' });
-//   }
-// };
-
-
-
-
 // GET: Fetch all history
 exports.getHistory = async (req, res) => {
   try {
